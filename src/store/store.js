@@ -20,7 +20,7 @@ export default new Vuex.Store({
     },
     EDIT_TODO(state, todo) {
       const todos = state.todos;
-      todos.splice(todos.indexOv(todo), 1);
+      todos.splice(todos.indexOf(todo), 1);
       state.todos = todos;
       state.newTodo = todo.body;
     },
