@@ -28,6 +28,9 @@ export default new Vuex.Store({
       const todos = state.todos;
       todos.splice(todos.indexOf(todo), 1);
     },
+    REMOVE_COMPLETED_TODOS(state) {
+      state.todos = state.todos.filter(todo => !todo.completed);
+    },
     COMPLETE_TODO(state, todo) {
       todo.completed = !todo.completed;
     },
@@ -47,6 +50,9 @@ export default new Vuex.Store({
     },
     removeTodo({ commit }, todo) {
       commit('REMOVE_TODO', todo);
+    },
+    removeCompletedTodos({ commit }) {
+      commit('REMOVE_COMPLETED_TODOS');
     },
     completeTodo({ commit }, todo) {
       commit('COMPLETE_TODO', todo);

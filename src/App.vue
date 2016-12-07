@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <CompletedTodos></CompletedTodos>
     <GetTodo></GetTodo>
     <CurrentTodos></CurrentTodos>
+    <CompletedTodos></CompletedTodos>
   </div>
 </template>
 

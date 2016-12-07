@@ -1,7 +1,12 @@
 <template>
   <div id="get-todo" class="container">
-    <input type="text" class="form-control" :value="newTodo" @change="getTodo" placeholder="I need to...">
-    <button class="btn btn-primary" @click="addTodo">Add Todo</button>
+    <h1>What do you need To Do today?</h1>
+    <form  class="input-group">
+      <input type="text" class="form-control" :value="newTodo" @change="getTodo" placeholder="I need to...">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" @click="addTodo">Add Todo</button>
+      </span>
+    </form>
   </div>
 </template>
 <script>
@@ -10,7 +15,8 @@
       getTodo(e) {
         this.$store.dispatch('getTodo', e.target.value);
       },
-      addTodo() {
+      addTodo(e) {
+        e.preventDefault();
         this.$store.dispatch('addTodo');
         this.$store.dispatch('clearTodo');
       },

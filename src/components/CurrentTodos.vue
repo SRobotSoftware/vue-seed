@@ -1,16 +1,19 @@
 <template>
   <div id="current-todos" class="container">
-    <h3 v-if="todos.length">Current({{todos.length}})</h3>
+    <h3>Current({{todos.length}})</h3>
     <ul class="list-group">
-      <li class="list-group-item" v-for="todo in todos">
+      <li class="list-group-item clearfix" v-for="todo in todos">
         {{todo.body}}
         <div class="btn-group">
-          <button type="button" @click="edit(todo)" class="btn btn-default btn-sm"></button>
-          <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit
-          <button type="button" @click="complete(todo)" class="btn btn-default btn-sm"></button>
-          <span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Complete
-          <button type="button" @click="remove(todo)" class="btn btn-default btn-sm"></button>
-          <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Remove
+          <button type="button" @click="edit(todo)" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit
+          </button>
+          <button type="button" @click="complete(todo)" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Complete
+          </button>
+          <button type="button" @click="remove(todo)" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Remove
+          </button>
         </div>
       </li>
     </ul>
