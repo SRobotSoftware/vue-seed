@@ -6,7 +6,8 @@ module.exports = {
   },
   // required to lint *.vue files
   plugins: [
-    'html'
+    'html',
+    'vue'
   ],
   // add your custom rules here
   'rules': {
@@ -14,5 +15,5 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'import/no-unresolved': 0
   },
-  extends: 'vynyl'
+  extends: ['vue', 'vynyl']
 }
