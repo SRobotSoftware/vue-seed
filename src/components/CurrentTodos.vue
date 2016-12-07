@@ -23,7 +23,7 @@ export default {
       this.$store.dispatch('editTodo', todo);
     },
     complete(todo) {
-      this.$store.dispatch('completetodo', todo);
+      this.$store.dispatch('completeTodo', todo);
     },
     remove(todo) {
       this.$store.dispatch('removeTodo', todo);
