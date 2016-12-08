@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container is-fluid">
     <GetTodo></GetTodo>
     <CurrentTodos></CurrentTodos>
     <CompletedTodos></CompletedTodos>
@@ -24,5 +24,6 @@ export default {
 <style>
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    margin-top: 25px;
   }
 </style>

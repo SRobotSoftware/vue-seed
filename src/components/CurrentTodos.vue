@@ -1,22 +1,32 @@
 <template>
-  <div id="current-todos" class="container">
+  <div id="current-todos" class="box">
     <h3>Current({{todos.length}})</h3>
-    <ul class="list-group">
-      <li class="list-group-item clearfix" v-for="todo in todos">
-        {{todo.body}}
-        <div class="btn-group">
-          <button type="button" @click="edit(todo)" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit
-          </button>
-          <button type="button" @click="complete(todo)" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Complete
-          </button>
-          <button type="button" @click="remove(todo)" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Remove
-          </button>
-        </div>
-      </li>
-    </ul>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="todo in todos">
+          <td>{{todo.body}}</td>
+          <td>
+            <span class="control is-grouped">
+              <button type="button" @click="edit(todo)" class="button is-primary">
+                <span class="icon glyphicon-edit"><i class="fa fa-edit"></i></span>&nbsp;Edit
+              </button>
+              <button type="button" @click="complete(todo)" class="button is-info">
+                <span class="icon glyphicon-edit"><i class="fa fa-check"></i></span>&nbsp;Complete
+              </button>
+              <button type="button" @click="remove(todo)" class="button is-danger">
+                <span class="icon glyphicon-edit"><i class="fa fa-trash"></i></span>&nbsp;Remove
+              </button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 <script>

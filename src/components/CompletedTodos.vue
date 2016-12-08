@@ -1,24 +1,32 @@
 <template>
-  <div id="completed-todos" class="container">
-    <h3>Completed({{completed.length}})</h3>
-    <ul class="list-group">
-      <li v-if="completed.length" class="list-group-item clearfix">
-        <button class="btn btn-danger btn-sm pull-right" type="button" @click="removeAll()">
-          <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Clear all completed
-        </button>
-      </li>
-      <li class="list-group-item clearfix" v-for="todo in completed">
-        <s>{{todo.body}}</s>
-        <div class="btn-group pull-right">
-          <button type="button" @click="uncomplete(todo)" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Uncomplete
-          </button>
-          <button type="button" @click="remove(todo)" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Remove
-          </button>
-        </div>
-      </li>
-    </ul>
+  <div id="completed-todos" class="box">
+    <h3 class="is-pulled-left">Completed({{completed.length}})</h3>
+    <button class="button is-danger is-pulled-right" type="button" @click="removeAll()" :disabled="!completed.length">
+      <span class="icon glyphicon-edit"><i class="fa fa-trash"></i></span>&nbsp;Clear all completed
+    </button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="todo in completed">
+          <td>{{todo.body}}</td>
+          <td>
+            <span class="control is-grouped">
+              <button type="button" @click="uncomplete(todo)" class="button is-warning">
+                <span class="icon glyphicon-edit"><i class="fa fa-check"></i></span>&nbsp;Uncomplete
+              </button>
+              <button type="button" @click="remove(todo)" class="button is-danger">
+                <span class="icon glyphicon-edit"><i class="fa fa-trash"></i></span>&nbsp;Remove
+              </button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 <script>

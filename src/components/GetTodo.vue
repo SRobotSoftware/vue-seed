@@ -1,10 +1,10 @@
 <template>
-  <div id="get-todo" class="container">
+  <div id="get-todo" class="box">
     <h1>What do you need To Do today?</h1>
-    <form  class="input-group">
-      <input type="text" class="form-control" :value="newTodo" @change="getTodo" placeholder="I need to...">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" @click="addTodo">Add Todo</button>
+    <form>
+      <span class="control has-addons">
+        <input type="text" class="input is-primary" :value="newTodo" @change="getTodo" placeholder="I need to...">
+        <button type="submit" class="button is-primary" @click="addTodo">Add Todo</button>
       </span>
     </form>
   </div>
